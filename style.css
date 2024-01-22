@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&family=Young+Serif&display=swap');
+:root{
+    --RoseWhite:hsl(330,100%,98%);
+    --Eggshell:hsl(30,54%,90%);
+    --LightGrey:hsl(30,18%,87%);
+    --WengeBrown:hsl(30,10%,34%);
+    --DarkCharcoal:hsl(24,5%,18%);
+    --Nutmeg: hsl(14, 45%, 36%);
+    --DarkRaspberry: hsl(332, 51%, 32%)
+}
+/*
+1. Use a more-intuitive box-sizing model.
+*/
+*, *::before, *::after {
+box-sizing: border-box;
+}
+/*
+2. Remove default margin
+*/
+* {
+margin: 0;
+}
+/*
+Typographic tweaks!
+3. Add accessible line-height
+4. Improve text rendering
+*/
+body {
+line-height: 1.5;
+-webkit-font-smoothing: antialiased;
+font-family: 'Outfit', sans-serif;
+min-height: 100vh;
+background-color: var(--Eggshell);
+}
+/*
+5. Improve media defaults
+*/
+img, svg {
+display: block;
+max-width: 100%;
+}
+/*
+6. Remove built-in form typography styles
+*/
+button {
+font: inherit;
+}
+/*
+7. Avoid text overflows
+*/
+p, h1, h2, h3, h4, h5, h6 {
+
+overflow-wrap: break-word;
+}
+h1, h3, h4, h5, h6 {
+font-family: 'Young Serif', serif;
+}
+h1{
+    font-size: 4rem;
+    font-weight: 400;
+    color: var(--DarkCharcoal);
+}
+h2{
+    color: var(--DarkRaspberry);
+    font-weight: 600;
+}
+h3, h4, h5, h6{
+    font-size: 1.8rem;
+    font-weight: 400;
+    color: var(--Nutmeg);
+    margin-bottom: 20px;
+}
+bold{
+    font-weight: 600;
+    color: var(--DarkCharcoal);
+}
+.recipe{
+    padding: 35px;
+    display: grid;
+    gap: 30px;
+    max-width: 1200px;
+    margin-inline: auto;
+    background-color: var(--RoseWhite);
+}
+
+/* figure */
+img{
+    border-radius: 15px;
+}
+
+
