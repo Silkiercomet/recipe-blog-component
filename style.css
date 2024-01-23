@@ -31,6 +31,7 @@ line-height: 1.5;
 font-family: 'Outfit', sans-serif;
 min-height: 100vh;
 background-color: var(--Eggshell);
+color: var(--WengeBrown);
 }
 /*
 5. Improve media defaults
@@ -68,7 +69,7 @@ h3, h4, h5, h6{
     font-size: 1.8rem;
     font-weight: 400;
     color: var(--Nutmeg);
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 bold{
     font-weight: 600;
@@ -78,14 +79,91 @@ bold{
     padding: 35px;
     display: grid;
     gap: 30px;
-    max-width: 1200px;
+    max-width: 1100px;
     margin-inline: auto;
     background-color: var(--RoseWhite);
+
+    margin-block: 25px;
+    border-radius: 30px;
 }
+ul, ol{
+    list-style: none;
+    display: grid;
+    gap: 10px;
+    padding-left: 1rem;
+}
+
+
+/* bullet lists */
+.recipe__praparation{
+    margin-left: 1.5rem;
+}
+ul > li::before{
+    content: "•"; 
+    display: inline-block; 
+    width: 1em;
+    margin-left: -1em;
+}
+.recipe__praparation ul{
+    margin-top: 10px;
+}
+.recipe__praparation ul > li::before{
+
+    color: var(--DarkRaspberry);
+}
+.recipe__ingredients ul > li::before{
+    color: var(--Nutmeg);
+}
+/* bullet lists */
+
+/* numbered list */
+
+ol{
+    counter-reset: instructions
+}
+ol li::before {
+    content: counter(instructions)"."; 
+    color: var(--Nutmeg);
+    display: inline-block; 
+    width: 1em;
+    margin-left: -1em;
+    font-weight: 600;
+} 
+ol li {counter-increment: instructions}
+/* numbered list */
+
+/* table for nutrition */
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 20px 0;
+  }
+
+  th, td {
+    border-bottom: 1px solid var(--LightGrey);
+    padding: 8px;
+
+  }
+  tr > td:last-of-type{
+    color: var(--Nutmeg);
+    font-weight: 600;
+  }
+/* table for nutrition */
 
 /* figure */
 img{
     border-radius: 15px;
 }
+
+
+
+/* colored bullets and numbers */
+
+/*li::before {content: "•"; color: red;
+  display: inline-block; width: 1em;
+  margin-left: -1em}
+  
+  https://www.w3.org/Style/Examples/007/color-bullets.en.html
+  */
 
 
