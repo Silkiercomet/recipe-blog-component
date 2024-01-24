@@ -1,24 +1,26 @@
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&family=Young+Serif&display=swap');
-:root{
-    --RoseWhite:hsl(330,100%,98%);
-    --Eggshell:hsl(30,54%,90%);
-    --LightGrey:hsl(30,18%,87%);
-    --WengeBrown:hsl(30,10%,34%);
-    --DarkCharcoal:hsl(24,5%,18%);
-    --Nutmeg: hsl(14, 45%, 36%);
-    --DarkRaspberry: hsl(332, 51%, 32%)
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&family=Young+Serif&display=swap");
+:root {
+  --RoseWhite: hsl(330, 100%, 98%);
+  --Eggshell: hsl(30, 54%, 90%);
+  --LightGrey: hsl(30, 18%, 87%);
+  --WengeBrown: hsl(30, 10%, 34%);
+  --DarkCharcoal: hsl(24, 5%, 18%);
+  --Nutmeg: hsl(14, 45%, 36%);
+  --DarkRaspberry: hsl(332, 51%, 32%);
 }
 /*
 1. Use a more-intuitive box-sizing model.
 */
-*, *::before, *::after {
-box-sizing: border-box;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 /*
 2. Remove default margin
 */
 * {
-margin: 0;
+  margin: 0;
 }
 /*
 Typographic tweaks!
@@ -26,136 +28,175 @@ Typographic tweaks!
 4. Improve text rendering
 */
 body {
-line-height: 1.5;
--webkit-font-smoothing: antialiased;
-font-family: 'Outfit', sans-serif;
-min-height: 100vh;
-background-color: var(--Eggshell);
-color: var(--WengeBrown);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  font-family: "Outfit", sans-serif;
+  min-height: 100vh;
+  background-color: var(--Eggshell);
+  color: var(--WengeBrown);
 }
 /*
 5. Improve media defaults
 */
-img, svg {
-display: block;
-max-width: 100%;
+img,
+svg {
+  display: block;
+  max-width: 100%;
 }
 /*
 6. Remove built-in form typography styles
 */
 button {
-font: inherit;
+  font: inherit;
 }
 /*
 7. Avoid text overflows
 */
-p, h1, h2, h3, h4, h5, h6 {
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+h1,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Young Serif", serif;
+}
+h1 {
+  font-size: 4rem;
+  font-weight: 400;
+  color: var(--DarkCharcoal);
+}
+h2 {
+  color: var(--DarkRaspberry);
+  font-weight: 600;
+}
+h3,
+h4,
+h5,
+h6 {
+  font-size: 1.8rem;
+  font-weight: 400;
+  color: var(--Nutmeg);
+  margin-bottom: 10px;
+}
+bold {
+  font-weight: 600;
+  color: var(--DarkCharcoal);
+}
+.recipe {
+  padding: 35px;
+  display: grid;
+  gap: 30px;
+  max-width: 1100px;
+  margin-inline: auto;
+  background-color: var(--RoseWhite);
 
-overflow-wrap: break-word;
+  margin-block: 25px;
+  border-radius: 30px;
 }
-h1, h3, h4, h5, h6 {
-font-family: 'Young Serif', serif;
+ul,
+ol {
+  list-style: none;
+  display: grid;
+  gap: 10px;
+  padding-left: 1rem;
 }
-h1{
-    font-size: 4rem;
-    font-weight: 400;
-    color: var(--DarkCharcoal);
-}
-h2{
-    color: var(--DarkRaspberry);
-    font-weight: 600;
-}
-h3, h4, h5, h6{
-    font-size: 1.8rem;
-    font-weight: 400;
-    color: var(--Nutmeg);
-    margin-bottom: 10px;
-}
-bold{
-    font-weight: 600;
-    color: var(--DarkCharcoal);
-}
-.recipe{
-    padding: 35px;
-    display: grid;
-    gap: 30px;
-    max-width: 1100px;
-    margin-inline: auto;
-    background-color: var(--RoseWhite);
-
-    margin-block: 25px;
-    border-radius: 30px;
-}
-ul, ol{
-    list-style: none;
-    display: grid;
-    gap: 10px;
-    padding-left: 1rem;
-}
-
 
 /* bullet lists */
-.recipe__praparation{
-    margin-left: 1.5rem;
+.recipe__praparation {
+  margin-left: 1.5rem;
 }
-ul > li::before{
-    content: "•"; 
-    display: inline-block; 
-    width: 1em;
-    margin-left: -1em;
+ul > li::before {
+  content: "•";
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
 }
-.recipe__praparation ul{
-    margin-top: 10px;
+.recipe__praparation ul {
+  margin-top: 10px;
 }
-.recipe__praparation ul > li::before{
-
-    color: var(--DarkRaspberry);
+.recipe__praparation ul > li::before {
+  color: var(--DarkRaspberry);
 }
-.recipe__ingredients ul > li::before{
-    color: var(--Nutmeg);
+.recipe__ingredients ul > li::before {
+  color: var(--Nutmeg);
+}
+.recipe__ingredients ul li {
+  display: flex;
+  justify-content: start;
+}
+.recipe__ingredients ul li p {
+  margin-left: 0.8em;
 }
 /* bullet lists */
 
 /* numbered list */
 
-ol{
-    counter-reset: instructions
+ol {
+  counter-reset: instructions;
 }
 ol li::before {
-    content: counter(instructions)"."; 
-    color: var(--Nutmeg);
-    display: inline-block; 
-    width: 1em;
-    margin-left: -1em;
-    font-weight: 600;
-} 
-ol li {counter-increment: instructions}
+  content: counter(instructions) ".";
+  color: var(--Nutmeg);
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
+  font-weight: 600;
+}
+ol li {
+  counter-increment: instructions;
+  display: flex;
+  justify-content: start;
+}
+ol li p {
+  margin-left: 0.8em;
+}
 /* numbered list */
 
 /* table for nutrition */
 table {
-    border-collapse: collapse;
-    width: 100%;
-    margin: 20px 0;
-  }
+  border-collapse: collapse;
+  width: 100%;
+  margin: 20px 0;
+}
 
-  th, td {
-    border-bottom: 1px solid var(--LightGrey);
-    padding: 8px;
-
-  }
-  tr > td:last-of-type{
-    color: var(--Nutmeg);
-    font-weight: 600;
-  }
+th,
+td {
+  border-bottom: 1px solid var(--LightGrey);
+  padding: 8px;
+}
+tr > td:last-of-type {
+  color: var(--Nutmeg);
+  font-weight: 600;
+}
 /* table for nutrition */
 
 /* figure */
-img{
-    border-radius: 15px;
+img {
+  border-radius: 15px;
 }
-
-
+@media screen and (max-width: 1100px) {
+  .recipe {
+    margin-block: 0;
+    border-radius: 0;
+    padding: 0;
+    gap: 45px;
+  }
+  .recipe > *:not(:first-child) {
+    padding-inline: 25px;
+  }
+  .recipe header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+  }
+}
 
 /* colored bullets and numbers */
 
@@ -164,6 +205,6 @@ img{
   margin-left: -1em}
   
   https://www.w3.org/Style/Examples/007/color-bullets.en.html
+
+  make a p tag to wrapped the content inside the li and put the bullet in the o tag not the li
   */
-
-
